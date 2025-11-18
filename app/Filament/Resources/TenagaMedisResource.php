@@ -18,6 +18,8 @@ class TenagaMedisResource extends Resource
     protected static ?string $model = TenagaMedis::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-user-group';
+    protected static ?string $navigationGroup = 'SDM Kesehatan';
+    protected static ?int $navigationSort = 20;
 
     public static function getNavigationLabel(): string
     {
