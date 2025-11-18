@@ -18,7 +18,7 @@ class AngkaKematianRSResource extends Resource
 {
     protected static ?string $model = AngkaKematianRS::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-heart';
+    protected static ?string $navigationIcon = 'heroicon-o-x-circle';
 
     public static function getNavigationLabel(): string
     {
