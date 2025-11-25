@@ -12,28 +12,19 @@ use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Filament\Tables\Columns\TextColumn;
-use Illuminate\Database\Eloquent\Builder;
 
 class AngkaKematianRSResource extends Resource
 {
     protected static ?string $model = AngkaKematianRS::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-x-circle';
+    // === Navigasi ===
+    protected static ?string $navigationIcon  = 'heroicon-o-building-office-2';
+    protected static ?string $navigationGroup = 'Rumah Sakit & Rujukan';
+    protected static ?int $navigationSort     = 40;
 
-    public static function getNavigationLabel(): string
-    {
-        return 'Angka Kematian RS';
-    }
-
-    public static function getModelLabel(): string
-    {
-        return 'Angka Kematian RS';
-    }
-
-    public static function getPluralModelLabel(): string
-    {
-        return 'Angka Kematian Rumah Sakit';
-    }
+    protected static ?string $navigationLabel   = 'Angka Kematian RS';
+    protected static ?string $modelLabel        = 'Angka Kematian RS';
+    protected static ?string $pluralModelLabel  = 'Angka Kematian Rumah Sakit';
 
     public static function form(Form $form): Form
     {
@@ -169,7 +160,7 @@ class AngkaKematianRSResource extends Resource
                     ->sortable(),
             ])
             ->filters([
-                //
+                // misal nanti mau tambah filter RS / GDR tinggi bisa di sini
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
@@ -190,9 +181,9 @@ class AngkaKematianRSResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListAngkaKematianRS::route('/'),
+            'index'  => Pages\ListAngkaKematianRS::route('/'),
             'create' => Pages\CreateAngkaKematianRS::route('/create'),
-            'edit' => Pages\EditAngkaKematianRS::route('/{record}/edit'),
+            'edit'   => Pages\EditAngkaKematianRS::route('/{record}/edit'),
         ];
     }
 }
