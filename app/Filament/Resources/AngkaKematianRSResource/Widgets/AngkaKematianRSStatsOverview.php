@@ -2,7 +2,7 @@
 
 namespace App\Filament\Resources\AngkaKematianRSResource\Widgets;
 
-use App\Models\AngkaKematianRS;
+use App\Services\AngkaKematianRsDashboardService;
 use Filament\Widgets\StatsOverviewWidget as BaseWidget;
 use Filament\Widgets\StatsOverviewWidget\Card;
 
@@ -10,32 +10,25 @@ class AngkaKematianRSStatsOverview extends BaseWidget
 {
     protected function getCards(): array
     {
-        $totalRs = AngkaKematianRS::count();
-
-        $totalPasienKeluar = AngkaKematianRS::sum('pk_total');
-        $totalMati = AngkaKematianRS::sum('m_total');
-        $totalMati48 = AngkaKematianRS::sum('m48_total');
-
-        $avgGdr = round((float) AngkaKematianRS::avg('gdr_total'), 2);
-        $avgNdr = round((float) AngkaKematianRS::avg('ndr_total'), 2);
+        $cards = AngkaKematianRsDashboardService::getCards();
 
         return [
-            Card::make('Total Rumah Sakit', $totalRs)
+            Card::make('Total Rumah Sakit', $cards['total_rumah_sakit'])
                 ->description('RS yang melaporkan data'),
 
-            Card::make('Total Pasien Keluar', $totalPasienKeluar)
+            Card::make('Total Pasien Keluar', $cards['total_pasien_keluar'])
                 ->description('Hidup + Mati'),
 
-            Card::make('Total Pasien Meninggal', $totalMati)
+            Card::make('Total Pasien Meninggal', $cards['total_pasien_meninggal'])
                 ->description('Seluruh kematian di RS'),
 
-            Card::make('Total Meninggal ≥ 48 Jam', $totalMati48)
+            Card::make('Total Meninggal ≥ 48 Jam', $cards['total_meninggal_48_jam'])
                 ->description('Setelah ≥ 48 jam dirawat'),
 
-            Card::make('Rata-rata GDR (%)', $avgGdr)
+            Card::make('Rata-rata GDR (%)', $cards['rata_rata_gdr'])
                 ->description('Gross Death Rate'),
 
-            Card::make('Rata-rata NDR (%)', $avgNdr)
+            Card::make('Rata-rata NDR (%)', $cards['rata_rata_ndr'])
                 ->description('Net Death Rate'),
         ];
     }

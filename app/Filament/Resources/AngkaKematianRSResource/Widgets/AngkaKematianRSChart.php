@@ -2,7 +2,7 @@
 
 namespace App\Filament\Resources\AngkaKematianRSResource\Widgets;
 
-use App\Models\AngkaKematianRS;
+use App\Services\AngkaKematianRsDashboardService;
 use Filament\Widgets\ChartWidget;
 
 class AngkaKematianRSChart extends ChartWidget
@@ -11,27 +11,25 @@ class AngkaKematianRSChart extends ChartWidget
 
     protected function getData(): array
     {
-        $data = AngkaKematianRS::query()
-            ->orderBy('nama_rs')
-            ->get();
+        $chart = AngkaKematianRsDashboardService::getChart();
 
         return [
             'datasets' => [
                 [
                     'label' => 'GDR (%)',
-                    'data' => $data->pluck('gdr_total')->map(fn ($v) => (float) $v),
+                    'data'  => $chart['gdr'],
                 ],
                 [
                     'label' => 'NDR (%)',
-                    'data' => $data->pluck('ndr_total')->map(fn ($v) => (float) $v),
+                    'data'  => $chart['ndr'],
                 ],
             ],
-            'labels' => $data->pluck('nama_rs')->toArray(),
+            'labels' => $chart['labels'],
         ];
     }
 
     protected function getType(): string
     {
-        return 'bar'; // bar chart
+        return 'bar';
     }
 }

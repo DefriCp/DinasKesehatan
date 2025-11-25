@@ -51,6 +51,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('hospital_mortality_stats');
+        Schema::dropIfExists('angka_kematian_rs');
     }
 };
