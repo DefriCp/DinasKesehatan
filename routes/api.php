@@ -3,16 +3,19 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AngkaKematianRsDashboardController;
-
+use App\Http\Controllers\Api\TenagaMedisDashboardController;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
 Route::prefix('v1')->group(function () {
-
     Route::get(
         'angka-kematian-rs/dashboard',
         AngkaKematianRsDashboardController::class
+    );
+    Route::get(
+        'tenaga-medis/dashboard',
+        TenagaMedisDashboardController::class
     );
 });

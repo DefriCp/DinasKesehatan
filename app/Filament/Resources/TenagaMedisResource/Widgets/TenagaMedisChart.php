@@ -2,7 +2,7 @@
 
 namespace App\Filament\Resources\TenagaMedisResource\Widgets;
 
-use App\Models\TenagaMedis;
+use App\Services\TenagaMedisDashboardService;
 use Filament\Widgets\ChartWidget;
 
 class TenagaMedisChart extends ChartWidget
@@ -11,27 +11,25 @@ class TenagaMedisChart extends ChartWidget
 
     protected function getData(): array
     {
-        $data = TenagaMedis::query()
-            ->orderBy('unit_kerja')
-            ->get();
+        $chart = TenagaMedisDashboardService::getChart();
 
         return [
             'datasets' => [
                 [
                     'label' => 'Total Dokter',
-                    'data'  => $data->pluck('dokter_total')->map(fn ($v) => (int) $v),
+                    'data'  => $chart['total_dokter'],
                 ],
                 [
                     'label' => 'Total Dokter Gigi',
-                    'data'  => $data->pluck('jumlah_gigi_total')->map(fn ($v) => (int) $v),
+                    'data'  => $chart['total_dokter_gigi'],
                 ],
             ],
-            'labels' => $data->pluck('unit_kerja')->toArray(),
+            'labels' => $chart['labels'],
         ];
     }
 
     protected function getType(): string
     {
-        return 'bar'; // bar chart
+        return 'bar';
     }
 }
