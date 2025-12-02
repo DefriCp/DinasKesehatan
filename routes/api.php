@@ -29,12 +29,13 @@ use App\Http\Controllers\Api\PelayananKesehatanDMDashboardController;
 use App\Http\Controllers\Api\PelayananKesehatanOdgjBeratDashboardController;
 use App\Http\Controllers\Api\KasusFluBurungDashboardController;
 
-
+// Route default bawaan Sanctum, biarkan saja kalau masih dipakai
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::prefix('v1')->group(function () {
+// Semua API dashboard indikator (1–26) dilindungi oleh API Key
+Route::middleware('dinkes.api')->prefix('v1')->group(function () {
     // 1. Angka Kematian RS
     Route::get('angka-kematian-rs/dashboard', AngkaKematianRsDashboardController::class);
 
@@ -76,14 +77,14 @@ Route::prefix('v1')->group(function () {
         'pelayanan-kesehatan-ibu/dashboard',
         PelayananKesehatanIbuDashboardController::class
     );
-    
-        // 9. Imunisasi TD Ibu Hamil
+
+    // 9. Imunisasi TD Ibu Hamil
     Route::get(
         'imunisasi-td-ibu-hamil/dashboard',
         ImunisasiTdIbuHamilDashboardController::class
     );
 
-     // 10. TTD Ibu Hamil
+    // 10. TTD Ibu Hamil
     Route::get(
         'ttd-ibu-hamil/dashboard',
         TtdIbuHamilDashboardController::class
@@ -167,7 +168,7 @@ Route::prefix('v1')->group(function () {
         PelayananKesehatanHipertensiDashboardController::class
     );
 
-     // 24. Pelayanan Kesehatan DM
+    // 24. Pelayanan Kesehatan DM
     Route::get(
         'pelayanan-kesehatan-dm/dashboard',
         PelayananKesehatanDMDashboardController::class
