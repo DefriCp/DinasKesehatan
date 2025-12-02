@@ -44,11 +44,32 @@ class KasusMalaria extends Model
     ];
 
     protected $casts = [
-        'konfirmasi_persen'   => 'float',
-        'pengobatan_persen'   => 'float',
-        'cfr_l_persen'        => 'float',
-        'cfr_p_persen'        => 'float',
-        'cfr_total_persen'    => 'float',
-        'api_per1000'         => 'float',
+        'tahun'             => 'integer',
+
+        'suspek'            => 'integer',
+
+        'konfirmasi_mikroskopis' => 'integer',
+        'konfirmasi_rdt'         => 'integer',
+        'konfirmasi_total'       => 'integer',
+        'konfirmasi_persen'      => 'float',
+
+        'positif_l'         => 'integer',
+        'positif_p'         => 'integer',
+        'positif_total'     => 'integer',
+
+        'pengobatan_l'      => 'integer',
+        'pengobatan_p'      => 'integer',
+        'pengobatan_total'  => 'integer',
+        'pengobatan_persen' => 'float',
+
+        'meninggal_l'       => 'integer',
+        'meninggal_p'       => 'integer',
+        'meninggal_total'   => 'integer',
+
+        'cfr_l_persen'      => 'float',
+        'cfr_p_persen'      => 'float',
+        'cfr_total_persen'  => 'float',
+
+        'api_per1000'       => 'float',
     ];
 }

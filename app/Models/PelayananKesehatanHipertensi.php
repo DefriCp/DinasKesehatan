@@ -9,7 +9,6 @@ class PelayananKesehatanHipertensi extends Model
 {
     use HasFactory;
 
-    // Karena nama tabel kita custom
     protected $table = 'pelayanan_kesehatan_hipertensi';
 
     protected $fillable = [
@@ -34,9 +33,19 @@ class PelayananKesehatanHipertensi extends Model
     ];
 
     protected $casts = [
-        'pelayanan_l_persen'      => 'float',
-        'pelayanan_p_persen'      => 'float',
-        'pelayanan_total_persen'  => 'float',
-        'tahun'                   => 'integer',
-    ];
+    'tahun' => 'integer',
+
+    'estimasi_l'     => 'integer',
+    'estimasi_p'     => 'integer',
+    'estimasi_total' => 'integer',
+
+    'pelayanan_l_jumlah'     => 'integer',
+    'pelayanan_p_jumlah'     => 'integer',
+    'pelayanan_total_jumlah' => 'integer',
+
+    'pelayanan_l_persen'     => 'float',
+    'pelayanan_p_persen'     => 'float',
+    'pelayanan_total_persen' => 'float',
+];
+
 }

@@ -2,45 +2,52 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class PelayananKesehatanUsiaProduktif extends Model
 {
-    use HasFactory;
-
-    protected $table = 'pelayanan_kesehatan_usia_produktif';
+    protected $table = 'pelayanan_kesehatan_usia_produktifs';
 
     protected $fillable = [
         'kecamatan',
         'puskesmas',
-        'tahun',
 
-        'penduduk_laki_laki',
-        'penduduk_perempuan',
+        'penduduk_l',
+        'penduduk_p',
         'penduduk_total',
 
-        'skrining_laki_laki_jumlah',
-        'skrining_laki_laki_persen',
-        'skrining_perempuan_jumlah',
-        'skrining_perempuan_persen',
-        'skrining_total_jumlah',
+        'skrining_l',
+        'skrining_l_persen',
+        'skrining_p',
+        'skrining_p_persen',
+        'skrining_total',
         'skrining_total_persen',
 
-        'berisiko_laki_laki_jumlah',
-        'berisiko_laki_laki_persen',
-        'berisiko_perempuan_jumlah',
-        'berisiko_perempuan_persen',
-        'berisiko_total_jumlah',
+        'berisiko_l',
+        'berisiko_l_persen',
+        'berisiko_p',
+        'berisiko_p_persen',
+        'berisiko_total',
         'berisiko_total_persen',
     ];
 
     protected $casts = [
-        'skrining_laki_laki_persen'      => 'float',
-        'skrining_perempuan_persen'      => 'float',
-        'skrining_total_persen'          => 'float',
-        'berisiko_laki_laki_persen'      => 'float',
-        'berisiko_perempuan_persen'      => 'float',
-        'berisiko_total_persen'          => 'float',
+        'penduduk_l' => 'integer',
+        'penduduk_p' => 'integer',
+        'penduduk_total' => 'integer',
+
+        'skrining_l' => 'integer',
+        'skrining_l_persen' => 'float',
+        'skrining_p' => 'integer',
+        'skrining_p_persen' => 'float',
+        'skrining_total' => 'integer',
+        'skrining_total_persen' => 'float',
+
+        'berisiko_l' => 'integer',
+        'berisiko_l_persen' => 'float',
+        'berisiko_p' => 'integer',
+        'berisiko_p_persen' => 'float',
+        'berisiko_total' => 'integer',
+        'berisiko_total_persen' => 'float',
     ];
 }

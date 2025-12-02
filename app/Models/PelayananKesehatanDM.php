@@ -22,7 +22,9 @@ class PelayananKesehatanDM extends Model
     ];
 
     protected $casts = [
-        'tahun'            => 'integer',
-        'pelayanan_persen' => 'float',
+        'tahun'               => 'integer',
+        'jumlah_penderita_dm' => 'integer',
+        'pelayanan_jumlah'    => 'integer',
+        'pelayanan_persen'    => 'float',
     ];
 }

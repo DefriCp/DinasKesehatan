@@ -32,9 +32,17 @@ class KasusDbd extends Model
     ];
 
     protected $casts = [
-        'cfr_l_persen'          => 'float',
-        'cfr_p_persen'          => 'float',
-        'cfr_total_persen'      => 'float',
+        'kasus_l'     => 'integer',
+        'kasus_p'     => 'integer',
+        'kasus_total' => 'integer',
+
+        'meninggal_l'     => 'integer',
+        'meninggal_p'     => 'integer',
+        'meninggal_total' => 'integer',
+
+        'cfr_l_persen'        => 'float',
+        'cfr_p_persen'        => 'float',
+        'cfr_total_persen'    => 'float',
         'angka_kesakitan_per100k' => 'float',
     ];
 }

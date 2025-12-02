@@ -55,9 +55,37 @@ class KejadianLuarBiasa extends Model
     ];
 
     protected $casts = [
+        'jumlah_kec'       => 'integer',
+        'jumlah_desa_kel'  => 'integer',
+
         'tanggal_diketahui'     => 'date',
         'tanggal_ditanggulangi' => 'date',
         'tanggal_akhir'         => 'date',
+
+        'penderita_l'      => 'integer',
+        'penderita_p'      => 'integer',
+        'penderita_total'  => 'integer',
+
+        'umur_0_7_hari'    => 'integer',
+        'umur_8_28_hari'   => 'integer',
+        'umur_1_11_bln'    => 'integer',
+        'umur_1_4_thn'     => 'integer',
+        'umur_5_9_thn'     => 'integer',
+        'umur_10_14_thn'   => 'integer',
+        'umur_15_19_thn'   => 'integer',
+        'umur_20_44_thn'   => 'integer',
+        'umur_45_54_thn'   => 'integer',
+        'umur_55_59_thn'   => 'integer',
+        'umur_60_69_thn'   => 'integer',
+        'umur_70_plus_thn' => 'integer',
+
+        'kematian_l'       => 'integer',
+        'kematian_p'       => 'integer',
+        'kematian_total'   => 'integer',
+
+        'penduduk_terancam_l'     => 'integer',
+        'penduduk_terancam_p'     => 'integer',
+        'penduduk_terancam_total' => 'integer',
 
         'attack_rate_l_persen'     => 'float',
         'attack_rate_p_persen'     => 'float',

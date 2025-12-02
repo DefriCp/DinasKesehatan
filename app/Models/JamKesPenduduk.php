@@ -13,4 +13,9 @@ class JamKesPenduduk extends Model
         'jumlah',
         'persentase',
     ];
+
+    protected $casts = [
+        'jumlah'     => 'integer',
+        'persentase' => 'float',
+    ];
 }

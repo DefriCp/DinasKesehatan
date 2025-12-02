@@ -14,4 +14,18 @@ class TenagaKesmasKeslingdanGizi extends Model
         'kesling_l', 'kesling_p', 'kesling_total',
         'gizi_l', 'gizi_p', 'gizi_total',
     ];
+
+    protected $casts = [
+        'kesmas_l'      => 'integer',
+        'kesmas_p'      => 'integer',
+        'kesmas_total'  => 'integer',
+
+        'kesling_l'     => 'integer',
+        'kesling_p'     => 'integer',
+        'kesling_total' => 'integer',
+
+        'gizi_l'        => 'integer',
+        'gizi_p'        => 'integer',
+        'gizi_total'    => 'integer',
+    ];
 }

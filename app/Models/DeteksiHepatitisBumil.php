@@ -25,7 +25,12 @@ class DeteksiHepatitisBumil extends Model
     ];
 
     protected $casts = [
-        'persen_bumil_diperiksa' => 'float',
-        'persen_bumil_reaktif'   => 'float',
+        'tahun'                          => 'integer',
+        'jumlah_ibu_hamil'              => 'integer',
+        'ibu_hamil_diperiksa_reaktif'   => 'integer',
+        'ibu_hamil_diperiksa_nonreaktif'=> 'integer',
+        'ibu_hamil_diperiksa_total'     => 'integer',
+        'persen_bumil_diperiksa'        => 'float',
+        'persen_bumil_reaktif'          => 'float',
     ];
 }

@@ -41,6 +41,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tenaga_kesmas_keslingdan_gizis');
+        Schema::dropIfExists('tenaga_kesmas_kesling_dan_gizi');
     }
 };

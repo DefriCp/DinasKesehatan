@@ -34,8 +34,22 @@ class KasusBaruKusta extends Model
     ];
 
     protected $casts = [
-        'ncdr_l_per100k'     => 'float',
-        'ncdr_p_per100k'     => 'float',
-        'ncdr_total_per100k' => 'float',
+        'tahun'             => 'integer',
+
+        'pb_l'              => 'integer',
+        'pb_p'              => 'integer',
+        'pb_total'          => 'integer',
+
+        'mb_l'              => 'integer',
+        'mb_p'              => 'integer',
+        'mb_total'          => 'integer',
+
+        'total_l'           => 'integer',
+        'total_p'           => 'integer',
+        'total_kasus'       => 'integer',
+
+        'ncdr_l_per100k'    => 'float',
+        'ncdr_p_per100k'    => 'float',
+        'ncdr_total_per100k'=> 'float',
     ];
 }

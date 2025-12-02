@@ -41,7 +41,27 @@ class PneumoniaBalita extends Model
     ];
 
     protected $casts = [
+        'tahun'                         => 'integer',
+        'jumlah_balita'                 => 'integer',
+        'balita_batuk_kunjungan'       => 'integer',
+        'balita_batuk_tatalaksana_l'   => 'integer',
+        'balita_batuk_tatalaksana_p'   => 'integer',
         'balita_batuk_tatalaksana_persen' => 'float',
-        'penemuan_pneumonia_persen'       => 'float',
+
+        'perkiraan_pneumonia_balita'   => 'integer',
+
+        'pneumonia_l'                  => 'integer',
+        'pneumonia_p'                  => 'integer',
+        'pneumonia_berat_l'            => 'integer',
+        'pneumonia_berat_p'            => 'integer',
+
+        'jumlah_pneumonia_l'           => 'integer',
+        'jumlah_pneumonia_p'           => 'integer',
+        'jumlah_pneumonia_total'       => 'integer',
+        'penemuan_pneumonia_persen'    => 'float',
+
+        'batuk_non_pneumonia_l'        => 'integer',
+        'batuk_non_pneumonia_p'        => 'integer',
+        'batuk_non_pneumonia_total'    => 'integer',
     ];
 }

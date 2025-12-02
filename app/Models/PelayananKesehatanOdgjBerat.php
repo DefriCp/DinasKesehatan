@@ -31,7 +31,23 @@ class PelayananKesehatanOdgjBerat extends Model
     ];
 
     protected $casts = [
-        'tahun'            => 'integer',
-        'pelayanan_persen' => 'float',
+        'tahun'              => 'integer',
+
+        'sasaran_odgj_berat' => 'integer',
+
+        'skizo_0_14'         => 'integer',
+        'skizo_15_59'        => 'integer',
+        'skizo_60_plus'      => 'integer',
+
+        'psikotik_0_14'      => 'integer',
+        'psikotik_15_59'     => 'integer',
+        'psikotik_60_plus'   => 'integer',
+
+        'total_0_14'         => 'integer',
+        'total_15_59'        => 'integer',
+        'total_60_plus'      => 'integer',
+
+        'pelayanan_jumlah'   => 'integer',
+        'pelayanan_persen'   => 'float',
     ];
 }

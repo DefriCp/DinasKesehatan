@@ -14,4 +14,16 @@ class TenagaFarmasi extends Model
         'apoteker_l', 'apoteker_p', 'apoteker_total',
         'total_l', 'total_p', 'total_total',
     ];
+
+    protected $casts = [
+        'ttk_l'          => 'integer',
+        'ttk_p'          => 'integer',
+        'ttk_total'      => 'integer',
+        'apoteker_l'     => 'integer',
+        'apoteker_p'     => 'integer',
+        'apoteker_total' => 'integer',
+        'total_l'        => 'integer',
+        'total_p'        => 'integer',
+        'total_total'    => 'integer',
+    ];
 }

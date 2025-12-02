@@ -42,13 +42,29 @@ class KasusDiare extends Model
     ];
 
     protected $casts = [
-        'diare_dilayani_semua_persen'     => 'float',
-        'diare_dilayani_balita_persen'    => 'float',
-        'oralit_semua_persen'             => 'float',
-        'oralit_balita_persen'            => 'float',
-        'zinc_balita_persen'              => 'float',
-        'oralit_zinc_balita_persen'       => 'float',
-        'angka_kesakitan_semua_per1000'   => 'float',
-        'angka_kesakitan_balita_per1000'  => 'float',
+        'tahun'                         => 'integer',
+        'jumlah_penduduk'               => 'integer',
+
+        'target_penemuan_semua_umur'    => 'integer',
+        'target_penemuan_balita'        => 'integer',
+
+        'diare_dilayani_semua_jumlah'   => 'integer',
+        'diare_dilayani_semua_persen'   => 'float',
+        'diare_dilayani_balita_jumlah'  => 'integer',
+        'diare_dilayani_balita_persen'  => 'float',
+
+        'oralit_semua_jumlah'           => 'integer',
+        'oralit_semua_persen'           => 'float',
+        'oralit_balita_jumlah'          => 'integer',
+        'oralit_balita_persen'          => 'float',
+
+        'zinc_balita_jumlah'            => 'integer',
+        'zinc_balita_persen'            => 'float',
+
+        'oralit_zinc_balita_jumlah'     => 'integer',
+        'oralit_zinc_balita_persen'     => 'float',
+
+        'angka_kesakitan_semua_per1000'  => 'float',
+        'angka_kesakitan_balita_per1000' => 'float',
     ];
 }

@@ -25,10 +25,17 @@ class KasusFluBurung extends Model
     ];
 
     protected $casts = [
-        'tahun' => 'integer',
+        'tahun'          => 'integer',
+        'kasus_l'        => 'integer',
+        'kasus_p'        => 'integer',
+        'kasus_total'    => 'integer',
+        'kematian_l'     => 'integer',
+        'kematian_p'     => 'integer',
+        'kematian_total' => 'integer',
+        'cfr'            => 'float',   // accessor di bawah
     ];
 
-    // CFR (%) kab/kota / per baris (kalau mau ditampilkan)
+    // CFR (%) per baris (kalau mau ditampilkan)
     public function getCfrAttribute(): ?float
     {
         if ($this->kasus_total <= 0) {

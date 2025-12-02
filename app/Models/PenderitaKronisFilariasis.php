@@ -36,4 +36,29 @@ class PenderitaKronisFilariasis extends Model
         'jumlah_p',
         'jumlah_total',
     ];
+
+    protected $casts = [
+    'tahun' => 'integer',
+
+    'sebelumnya_l' => 'integer',
+    'sebelumnya_p' => 'integer',
+    'sebelumnya_total' => 'integer',
+
+    'baru_l' => 'integer',
+    'baru_p' => 'integer',
+    'baru_total' => 'integer',
+
+    'pindah_l' => 'integer',
+    'pindah_p' => 'integer',
+    'pindah_total' => 'integer',
+
+    'meninggal_l' => 'integer',
+    'meninggal_p' => 'integer',
+    'meninggal_total' => 'integer',
+
+    'jumlah_l' => 'integer',
+    'jumlah_p' => 'integer',
+    'jumlah_total' => 'integer',
+];
+
 }

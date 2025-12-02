@@ -26,7 +26,14 @@ class KasusHivKelompokUmur extends Model
     ];
 
     protected $casts = [
-        'proporsi_kelompok_umur_persen'   => 'float',
+        'tahun'                         => 'integer',
+        'kasus_l'                       => 'integer',
+        'kasus_p'                       => 'integer',
+        'kasus_total'                   => 'integer',
+        'proporsi_kelompok_umur_persen' => 'float',
+
+        'estimasi_orang_berisiko'       => 'integer',
+        'berisiko_dapat_pelayanan'      => 'integer',
         'persen_berisiko_dapat_pelayanan' => 'float',
     ];
 }
